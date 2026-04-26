@@ -1,92 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head></head>
-    <link rel="shortcut icon" href="favi.ico.png" type="image/x-icon">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        mark{
-            background-color: aqua;
-            font-weight: 1000;
-        }
-        h1 {
-            font-style: italic;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 60px;
-            text-align: center; 
-            background-color: rgb(0, 0, 0);
-            color: rgb(251, 255, 0);
-        }
-    body {
-        background-color: rgb(207, 201, 201);
-        color: rgb(0, 0, 0);
-    }
-    button {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-style: italic;
-        font-weight: bold;
-        color: rgb(255, 238, 0);
-        background-color: black;
-        right: 1000%;
-    }
-    </style>
-    <title>primeiro trabalho</title>
+    <title>Eventos de trilhas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>   
-    <h1>Notícia agora</h1> 
-    <h2 style="color: yellow; background-color: black;"><strong>Segue nas redes socias</strong></h2>
-     &#x1F61C;<a href="https://www.youtube.com/channel/UCbEXT1A84rtBr4euG69aFYQ" target="_blank" rel="external"><button>YOUTUBE 1</button></a> 
-      > &#x1F61C;<a href="https://www.instagram.com/frases_biblicasjesus/" target="_blank" rel="external"><button>INSTAGRAM</button></a> 
-       > &#x1F61C;<a href="https://www.tiktok.com/@frasesbivlicas?is_from_webapp=1&sender_device=pc" target="_blank" 
-       rel="external"><button>TIK TOK</button></a>
-       > &#x1F61C;<a href="https://github.com/Salema21/HTML" target="_blank" rel="external"><button>GITHUB</button></a>
+<body>
 
-    <p>
-        <a href="https://www.tiktok.com/@frasesbivlicas?is_from_webapp=1&sender_device=pc" target="_blank" rel="external"><img  src="images.png" alt="tik tok"></a>
-        <a href="https://www.instagram.com/frases_biblicasjesus/" target="_blank" rel="external"><img src="1409946.png" alt="instagram"></a> <a href="https://www.youtube.com/channel/UCbEXT1A84rtBr4euG69aFYQ" target="_blank" rel="external"><img src="youtube.png" alt="youtube"></a>
-        <a href="https://github.com/Salema21/HTML" target="_blank" rel="external"> <img style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" src="git.png" alt="github"></a>
-    </p>
-<h2>Planalto fiscaliza lula</h2>
-    <p>Análise será retomada na segunda-feira. Recém-nomeado por <ins><q>lula</q></ins> para o <ins><mark>TRE-PR &#x1F61C;</mark></ins>, <br>o desembargador José Sade discordou do relator e entendeu que senador cometeu abuso de poder econômico.<br>
-    </p>
-<h2>Policia federal encontra drogas em um local conhecido como:</h2>
-    <p>Lorem ipsum adipisicing elit. Aliquam odio quia tempora autem necessitatibus, hic, quo voluptatem maxime pariatur <br> consequuntur quidem ad deleniti minus veritatis perferendis molestiae ducimus, est atque.
-    </p>
-<h2>Lista de video games </h2>
-<ol>
-<li style="background-color: black; color: yellow;"><strong>Play 1</strong></li>
-    <ol>
-        <li type="square"><strong>Jogos</strong></li>
-            <ol>
-                <li><strong>cash</strong></li>
-                <li><strong>mario</strong></li>
-            </ol>
-</ol> <hr>
-<li style="background-color: black; color:yellow;"><strong>Play 2</strong></li>
-    <ol>
-        <li><strong>Jogos</strong></li>
-        <ol type="1">
-            <li><strong>gta san andreas</strong></li>
-            <li><strong>pes 2010</strong></li>
-            <li><strong>resident evil 4</strong></li>
-        </ol>
-</ol> <hr>
-<li style="background-color: black; color: yellow;"><strong>Xbox 360</strong></li>
-    <ol>
-        <li><strong>jogos</strong></li>
-            <ol>
-                <li><strong><a href="https://youtu.be/0wIzQC54ySk" target="_blank" rel="external">GTA 5.</a></strong></li>
-                 > Um ladrão de carros perseguido pelo <mark style="background-color: yellow;">FBI</mark>. 
 
-                <li><strong><a href="https://youtu.be/jTgzJ79KDsg">Assassin's creed.</a></strong></li>
-                 > Um assacino em serie , procurado por todos.
-                
-                 <li><strong><a href="https://youtu.be/mHDEDDrGYvo" target="_blank" rel="external">Call of dutty.</a></strong></li>
-                 > Um atirador de elite com missões extraordínarias. 
+    <div class="sidebar">
+        <h2>Circuito Terê Verde RJ</h2>
+        <h4>Teresópolis</h4>
+        <a href="#" class="active"><i data-lucide="home"></i>Home</a>
+        <a href="#" class="active"><i data-lucide="mountain"></i>Trilhas</a>
+        <a href="#" class="active"><i data-lucide="calendar"></i>Eventos</a>
+    </div>
 
-            </ol>       
-    </ol>
-</ol> <hr>
+    <div class="main">
+        <h1>Eventos</h1>
+
+        <input type="text" placeholder="Buscar Eventos" class="search">
+
+        <div class="cards">
+
+        <!-- card 1 eventos -->
+        <div class="card">
+            <a href="https://maps.app.goo.gl/jGq4zE1HGYPAQQ6b6" target="_blank">
+            <img src="imagens/sino.png">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Pedro do Sino</h3>
+            <p>Parque Nacional da Serra dos Orgãos </p>
+            <p>07/07 ás 08:00</p>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+        </div>
+
+        <!-- card 2 eventos -->
+        <div class="card">
+            <a href="https://maps.google.com/?q=Pedra+da+Tartaruga+Teresopolis" target="_blank">
+            <img src="imagens/tartaruga.png">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Escalada na Pedra da Tartaruga</h3>
+            <p>06/07 ás 08:00</p>
+            <p>Vale do Bomsucesso</p>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+        </div>
+
+        <!--card 3 eventos -->
+        <div class="card">
+            <a href="https://maps.google.com/?q=Dedo+de+Deus+Teresopolis" target="_blank">
+            <img src="imagens/dedo.png" alt="">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Caminhada no Dedo de Deus</h3>
+            <p>05/07 ás 08:00</p>
+            <p>Dedo de Deus</p>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+
+        </div>
+
+        <!-- card 4 eventos-->
+        <div class="card">
+            <a href="https://maps.google.com/?q=Cachoeira+dos+Frades+Teresopolis" target="_blank">
+            <img src="imagens/frades.png" alt="">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Cachoeira dos Frades</h3>
+            <p>05/07 ás 10:00</p>
+            <p>Vale das Videiras</p>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+        </div>
+
+        <!-- card 5 eventos-->
+         <div class="card">
+            <a href="https://maps.google.com/?q=Tres+Picos+Teresopolis" target="_blank">
+            <img src="imagens/pico.png" alt="pico">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Caminha dos Três Picos</h3>
+            <p>06/07 ás 10:00</p>
+            <p>Parque Estadual</p>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+         </div>
+
+         <!-- card 6 eventos -->
+          <div class="card">
+            <a href="https://maps.google.com/?q=Agulha+do+Diabo+Teresopolis" target="_blank">
+            <img src="imagens/agulha.png" alt="agula">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Escalada Agulha do Diabo</h3>
+            <p>07/07 ás 10:00</p>
+            <p>Serra dos Órgãos</p>
+            <p><span class="contador">0</span> particiantes</p>
+            <button onclick="participar(this)"> Participar</button>
+          </div>
+
+        </div>
+    </div>
+
+    <script>
+    function participar(botao) {
+  const card = botao.parentElement;
+  const contador = card.querySelector(".contador");
+
+  let numero = parseInt(contador.innerText);
+
+  // se já estiver participando condicao para o botao de participar
+  if (botao.classList.contains("ativo")) {
+    numero--;
+    botao.classList.remove("ativo");
+    botao.innerText = "Participar";
+  } else {
+    numero++;
+    botao.classList.add("ativo");
+    botao.innerText = "Você está participando";
+  }
+
+  contador.innerText = numero;
+}
+</script>
+
+
+<script> // serve para o funcionamento do buscar
+const search = document.querySelector(".search");
+
+search.addEventListener("input", function () {
+  const valor = search.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const titulo = card.querySelector("h3").innerText.toLowerCase();
+
+    if (titulo.includes(valor)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+  lucide.createIcons(); /* para criar icones*/
+</script>
+<!-- <script src="scrypt.js"></script>  
+ para usar scrypt se precisar depois-->
+
 
 </body>
 </html>
