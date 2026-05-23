@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+.cards p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 550;
+  line-height: 30px;
+}
+
+body {
+  display: flex;
+  background: #f5f5f5;
+}
+.logo-icon {
+  margin-left:1px;
+  padding: 1px;
+}
+
+.logo i {
+  margin: 10px;
+  color: #000000;
+}
+
+.usuario {
+  margin: 10px;
+  padding-top: 100px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;}
+
+.usuario i {
+  font-size: 21px;
+  color: #f5f5f5;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: #16a34a;
+  color: #000000;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  
+}
+
+.sidebar h4 {
+  font-size: 12px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 30px; /*distancia entre icones sidebar*/
+  transition: 0.9s;
+}
+
+.sidebar a:hover {
+  background: #138817;
+  margin: 10px;
+}
+
+/* MAIN */
+.main {
+  margin-left: 240px;
+  padding: 20px;
+  width: 100%;
+}
+
+.main h1 {
+  margin-bottom: 10px;
+  color: #000000;
+  
+}
+
+/* SEARCH */
+.search {
+  width: 100%;
+  max-width:auto;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+.cards {
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*repeat :repete a coluna, auto-fit:automatico os cards na tela, minmax: tamanho mínimo e máximo */
+ display: grid;/*tranforma em grade organizados em linha e colunas*/
+ gap:10px; /*espaço entre os cards*/
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.card a {
+  position: relative;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card a:hover .overlay {
+  opacity: 1;
+}
+
+/* TEXTO */
+.card h3 {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.card p {
+  padding: 0 10px;
+  font-size: 14px;
+  color: #000000;
+  margin-top: auto;
+}
+
+/* BUTTON */
+.card button {
+  margin: 10px;
+  width:auto;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #16a34a;
+}
+
+button.ativo {
+  background: #2563eb;
+}
+button {
+  transition: 0.3s;
+}
+
+button.ativo {
+  transform: scale(1.05);
+}
+
+
+/* tamanho de tela celular e tablete */
+
+/* TABLET */
+@media (max-width: 950px) {
+  .sidebar {
+    width: 200px;  /* largura  */
+  }
+
+  .main {
+    margin-left: 220px; /*margem a esquerda */
+  }
+}
+
+/* "CELULAR!" para funcionar no celular*/ 
+@media (max-width: 600px) {
+  body {
+    flex-direction: column; /*serve para os itens em uma coluna vertical  */
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto; /*posicao barra verde cima para baixo*/ 
+    display: flex; /*block alinhado um embaixo do outro, flex um ao lado outro*/
+    justify-content: space-between; /* criar espaços iguao ao redor de cada item*/
+    align-items: center;
+  }
+
+
+.main {
+    margin: 0;
+    width: 100%;
+  }
+
+  .sidebar h2 {
+    font-size: 10px;
+  }
+
+  .sidebar h4 {
+    position: absolute;
+    left: 4%;
+    font-size: 8px;
+    top: 98px;
+
+
+    }
+
+  .search {
+    width: 100%;
+  }
+    .card button:hover {
+  background: #16a34a;
+}
+
+button.ativo {
+  background: #2563eb;
+}
+button {
+  transition: 0.3s;
+}
+
+button.ativo {
+  transform: scale(1.05);
+}
+.logo-icon {
+  margin-left:1px;
+  padding: 1px;
+}
+
+.logo i {
+  margin: 10px;
+
+  color: #000000;
+}
+.usuario {
+  position: absolute;
+  left: 300px;
+  bottom: 2px;
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de trilhas</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styletrilhas.css">
+</head>
+<body>
+
+
+    <div class="sidebar">
+      
+      <h2><i data-lucide="mountain" class="logo-icon"></i><span class="logo-text">  Circuito Terê Verde RJ </span></h2>
+          <h4 class="cidade">Teresópolis</h4>
+        <a href="index.html" class="active"><i data-lucide="home"></i>Home</a><!--active serve para destacar o botao usado e ccs-->
+        <a href="trilhas.html" class="active"><i data-lucide="mountain"></i>Trilhas</a>
+        <a href="#" class="active"><i data-lucide="calendar"></i>Eventos</a>
+        <div class="usuario" onclick="alternarUsuario()" style="cursor: pointer;"> <i class="ph ph-user"></i> <span id="nome-user">Convidado</span>
+        
+        </div>
+    </div>
+
+    <div class="main" id="home">
+      
+        <h1>Trilhas</h1>
+
+          
+        <input type="text" placeholder="Buscar Eventos" class="search">
+        
+      
+        <div class="cards">
+
+        <!-- card 1 eventos -->
+        <div class="card">
+            <a href="https://maps.app.goo.gl/jGq4zE1HGYPAQQ6b6" target="_blank">
+            <img src="imagens/sino.png">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Pedro do Sino</h3>
+            <p>Parque Nacional da Serra dos Orgãos </p>
+            <div class="logo"><!--usado para colocar a logo caledario-->
+            <i class="ph ph-calendar-star"></i>07 junho 08:00
+            </div>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+        </div>
+
+        <!-- card 2 eventos -->
+        <div class="card">
+            <a href="https://maps.google.com/?q=Pedra+da+Tartaruga+Teresopolis" target="_blank">
+            <img src="imagens/tartaruga.png">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Escalada na Pedra da Tartaruga</h3>
+            <p>Vale do Bomsucesso</p>
+            <div class="logo"><!--usado para colocar a logo caledario-->
+            <i class="ph ph-calendar-star"></i>07 junho 10:00
+            </div>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+        </div>
+
+        <!--card 3 eventos -->
+        <div class="card">
+            <a href="https://maps.google.com/?q=Dedo+de+Deus+Teresopolis" target="_blank">
+            <img src="imagens/dedo.png" alt="">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Caminhada no Dedo de Deus</h3>
+            <p>Dedo de Deus</p>
+            <div class="logo"><!--usado para colocar a logo caledario-->
+            <i class="ph ph-calendar-star"></i> 08 junho 06:00
+            </div>            
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+
+        </div>
+
+        <!-- card 4 eventos-->
+        <div class="card">
+            <a href="https://maps.google.com/?q=Cachoeira+dos+Frades+Teresopolis" target="_blank">
+            <img src="imagens/frades.png" alt="">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Cachoeira dos Frades</h3>
+            <p>Vale das Videiras</p>
+            <div class="logo"><!--usado para colocar a logo caledario-->
+            <i class="ph ph-calendar-star"></i>08 junho 08:00
+            </div>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+        </div>
+
+        <!-- card 5 eventos-->
+         <div class="card">
+            <a href="https://maps.google.com/?q=Tres+Picos+Teresopolis" target="_blank">
+            <img src="imagens/pico.png" alt="pico">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Caminha dos Três Picos</h3>
+            <p>Parque Estadual</p>
+            <div class="logo"> <!--usado para colocar a logo caledario-->
+            <i class="ph ph-calendar-star"></i>09 junho 7:00
+            </div>
+            <p><span class="contador">0</span> participantes</p>
+            <button onclick="participar(this)">Participar</button>
+         </div>
+
+         <!-- card 6 eventos -->
+          <div class="card">
+            <a href="https://maps.google.com/?q=Agulha+do+Diabo+Teresopolis" target="_blank">
+            <img src="imagens/agulha.png" alt="agula">
+            <div class="overlay">Ver no mapa</div>
+            </a>
+            <h3>Escalada Agulha do Diabo</h3>
+            <p>Serra dos Órgãos</p>
+            <div class="logo"><!--usado para colocar a logo caledario-->
+            <i class="ph ph-calendar-star"></i>09 junho 9:30
+            </div>
+            <p><span class="contador">0</span> particiantes</p>
+            <button onclick="participar(this)"> Participar</button>
+          </div>
+
+        </div>
+    </div>
+
+    <script> // faz com que o botao participar funcione 
+    function participar(botao) {
+  const card = botao.parentElement;
+  const contador = card.querySelector(".contador");
+
+  let numero = parseInt(contador.innerText);
+
+  // se já estiver participando condicao para o botao de participar
+  if (botao.classList.contains("ativo")) {
+    numero--;
+    botao.classList.remove("ativo");
+    botao.innerText = "Participar";
+  } else {
+    numero++;
+    botao.classList.add("ativo");
+    botao.innerText = "Você está participando";
+  }
+
+  contador.innerText = numero;
+}
+</script>
+
+
+<script> // serve para o funcionamento do buscar
+const search = document.querySelector(".search");
+
+search.addEventListener("input", function () {
+  const valor = search.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const titulo = card.querySelector("h3").innerText.toLowerCase();
+
+    if (titulo.includes(valor)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+function alternarUsuario() {
+  const nome = document.getElementById("nome-user");
+  if (nome.innerText === "Convidado") {
+    nome.innerText = "Usuário";
+  } else {
+    nome.innerText = "Convidado";
+  }
+}
+</script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+  lucide.createIcons(); /* para criar icones*/
+</script>
+<!-- <script src="scrypt.js"></script>  
+ para usar scrypt se precisar depois-->
+
+
+</body>
+</html>
