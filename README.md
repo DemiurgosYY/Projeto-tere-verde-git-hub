@@ -31,6 +31,7 @@ O MVP do projeto Terê Verde consiste em uma plataforma digital simples que perm
 
 -   HTML5
 -   CSS3
+-   JAVASCRIPT
 
 ## Como Executar o MVP
 
