@@ -12,9 +12,9 @@
     <header>
         <div class="logo">
             <a href="index.html" class="logo-link">
-        <i class="ph ph-mountains"></i>
-        <h1>Circuito Terê Verde</h1>
-    </a>
+                <i class="ph ph-mountains"></i>
+                <h1>Circuito Terê Verde</h1>
+            </a>
         </div>
 
         <div class="barra-pesquisa">
@@ -23,12 +23,12 @@
         </div>
 
         <div class="acoes">
-            <a href="#" class="btn-perfil">
+            <a href="#" class="btn-perfil" onclick="alternarStatusUsuario()">
                 <i class="ph ph-user"></i>
+                <span id="status-usuario">Convidado</span>
             </a>
         </div>
     </header>
-
     <main>
         <div class="card-clima">
             <div class="clima-topo">
@@ -82,5 +82,15 @@
     <footer>
         <p>&copy; 2026 - Projeto Terê Verde</p>
     </footer>
+    <script>
+    function alternarStatusUsuario() {
+        const status = document.getElementById("status-usuario");
+        if (status.innerText === "Convidado") {
+            status.innerText = "Usuário";
+        } else {
+            status.innerText = "Convidado";
+        }
+    }
+    </script>
 </body>
 </html>

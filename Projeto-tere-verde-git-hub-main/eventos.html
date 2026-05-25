@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Circuito Terê Verde</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-green: #00a859; 
+            --dark-green: #1a8741;
+            --light-bg: #f4f6f8; 
+            --sidebar-bg: var(--primary-green); 
+            --sidebar-text: #ffffff; 
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        
+        .sidebar {
+            width: 260px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--dark-green);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            color: var(--sidebar-text);
+        }
+
+        .sidebar h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            color: var(--sidebar-text);
+            margin-bottom: 5px;
+        }
+
+        
+        .sidebar h2 i, .sidebar [data-lucide], .sidebar a i {
+            color: var(--sidebar-text) !important;
+        }
+
+        .cidade {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8); 
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--sidebar-text);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background-color: rgba(0, 0, 0, 0.1); 
+            color: var(--sidebar-text);
+        }
+
+        
+        .main {
+            margin-left: 260px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .event-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.1);
+        }
+
+        .event-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 25px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .event-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        
+        .event-meta i, .check-item i {
+            color: var(--primary-green) !important;
+            font-size: 1.1rem;
+        }
+
+        
+        .status-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .status-open { background: #e1f7e9; color: var(--primary-green); }
+        .status-full { background: #feebeb; color: #e74c3c; }
+
+        
+        .checklist-section {
+            margin-top: 50px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .checklist-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-gray);
+        }
+
+        
+        .btn-participar {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-participar:hover {
+            background-color: var(--dark-green);
+            transform: scale(1.05);
+        }
+
+        .btn-full {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        
+        @media (max-width: 900px) {
+            .sidebar { width: 70px; padding: 15px 5px; }
+            .logo-text, .cidade, .sidebar span { display: none; }
+            .main { margin-left: 70px; padding: 20px; }
+            .event-card { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .btn-participar { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2><i data-lucide="mountain"></i><span class="logo-text">Circuito Terê Verde RJ</span></h2>
+        <h4 class="cidade">Teresópolis</h4>
+        
+        <a href="index.html"><i data-lucide="home"></i><span>Home</span></a>
+        <a href="index.html"><i data-lucide="map"></i><span>Trilhas</span></a>
+        <a href="#" class="active"><i data-lucide="calendar"></i><span>Eventos</span></a>
+        
+        <a href="#" style="margin-top: 60px;"><i data-lucide="user"></i><span>Convidado</span></a>
+    </div>
+
+    <div class="main">
+        <h1>Trilhas</h1>
+
+        <div class="event-list">
+            <div class="event-card">
+                <div class="event-info">
+                    <span class="status-tag status-open">Inscrições Abertas</span>
+                    <h3>Pôr do Sol na Pedra do Sino</h3>
+                    <div class="event-meta">
+                        <span><i class="ph ph-calendar-star"></i> 18 de Julho • 14:00</span>
+                        <span><i class="ph ph-map-pin"></i> PARNASO</span>
+                        <span><i class="ph ph-users"></i> 10 Vagas</span>
+                    </div>
+                </div>
+                <button class="btn-participar">Participar</button>
+            </div>
+
+            <div class="event-card">
+                <div class="event-info">
+                    <span class="status-tag status-open">Inscrições Abertas</span>
+                    <h3>Travessia dos Frades (Caminhada)</h3>
+                    <div class="event-meta">
+                        <span><i class="ph ph-calendar-star"></i> 25 de Julho • 07:30</span>
+                        <span><i class="ph ph-map-pin"></i> Vale dos Frades</span>
+                        <span><i class="ph ph-users"></i> 15 Vagas</span>
+                    </div>
+                </div>
+                <button class="btn-participar">Participar</button>
+            </div>
+
+            <div class="event-card">
+                <div class="event-info">
+                    <span class="status-tag status-full">Esgotado</span>
+                    <h3>Escalada Noturna: Dedo de Deus</h3>
+                    <div class="event-meta">
+                        <span><i class="ph ph-calendar-star"></i> 02 de Agosto • 22:00</span>
+                        <span><i class="ph ph-map-pin"></i> Mirante da Serra</span>
+                        <span><i class="ph ph-users"></i> 0 Vagas</span>
+                    </div>
+                </div>
+                <button class="btn-participar btn-full">Lista de Espera</button>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2><i data-lucide="backpack"></i> Equipamento Recomendado</h2>
+            <div class="checklist-grid">
+                <div class="check-item"><i class="ph ph-check-circle"></i> Bota de trilha confortável</div>
+                <div class="check-item"><i class="ph ph-check-circle"></i> Lanterna (com pilhas extras)</div>
+                <div class="check-item"><i class="ph ph-check-circle"></i> Corta-vento ou agasalho</div>
+                <div class="check-item"><i class="ph ph-check-circle"></i> Mínimo 2L de água e lanches</div>
+                <div class="check-item"><i class="ph ph-check-circle"></i> Documento de identificação</div>
+                <div class="check-item"><i class="ph ph-check-circle"></i> Capa de chuva leve</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
